@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+   <!--
+       一下两种方法都可以实现，第一种方法注释了，
+   ng-model 指令绑定输入域到控制器的属性（firstName 和 lastName）-->
+    <!--<div ng-app="myApp" ng-controller="myCtrl">
+        名：<input type="text" ng-model="firstName"><br>
+        姓:<input type="text" ng-model="lastName"><br>
+        姓名：{{firstName + "" + lastName}}
+    </div>
+    <script>
+        var app = angular.module("myApp",[]);
+        app.controller("myCtrl",function($scope){
+            $scope.lastName="w";
+            $scope.firstName = "jq";
+        })
+    </script>-->
+    
+    <div ng-app="myApp" ng-controller="myCtrl">
+        姓:<input type="text" ng-model="lastname"><br>
+        名:<input type="text" ng-model="firstname"><br>
+        姓名:{{nullname()}}
+    </div>
+    
+    <script>
+        var app = angular.module("myApp",[]);
+        app.controller("myCtrl",function($scope){
+            $scope.lastname="w";
+            $scope.firstname = "jq";
+            $scope.nullname = function(){
+                return $scope.firstname+" "+$scope.lastname;
+            }
+        })
+    </script>
+</body>
+</html>

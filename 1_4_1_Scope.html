@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <h1>{{carname}}</h1>
+    </div>
+    <p>控制器中创建一个属性名“carname”，对应了视图中使用{{}}中的名称</p>
+    
+    <script>
+        var app = angular.module('myApp',[]);
+        app.controller('myCtrl',function($scope){
+                $scope.carname = "wjq";
+        });
+    </script>
+</body>
+</html>

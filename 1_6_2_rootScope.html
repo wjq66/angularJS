@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <h3>姓氏为{{lastname}}的家族有:</h3>
+        <ul>
+            <li ng-repeat="x in names">{{x}}{{lastname}}</li>
+        </ul>
+    </div>
+    
+    
+    <script>
+        var app = angular.module("myApp",[]);
+        app.controller("myCtrl",function($scope,$rootScope){
+            $scope.names = ["jq1",'jq2','jq3'];
+            $rootScope.lastname = "w";
+        })
+    </script>
+</body>
+</html>

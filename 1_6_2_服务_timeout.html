@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+     <script src="https://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <h1>{{myHeader}}</h1>
+    </div>
+    
+    <script>
+        angular.module("myApp",[]).controller("myCtrl",function($scope,$timeout){
+            $scope.myHeader = "hello world";
+            $timeout(function(){
+                $scope.myHeader = "this is my first hello world";
+            },2000)
+        })
+    </script>
+</body>
+</html>

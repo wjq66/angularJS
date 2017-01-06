@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+<!--   
+   uppercase 过滤器将字符串格式化为大写：
+   lowercase 过滤器将字符串格式化为小写：
+   currency 过滤器将数字格式化为货币格式：
+   orderBy 过滤器根据表达式排列数组：
+   filter 过滤器从数组中选择一个子集：
+   -->
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <p>姓为{{lastname | uppercase }}</p><!--大写-->
+        <p>名为{{firstname | lowercase}}</p><br><!--小写-->
+        
+        <input type="number" ng-model="quantity">
+        <input type="number" ng-model="price">
+        <p>总价 = {{(quantity * price) | currency}}</p><br><!--数字化为货币格式-->
+        
+        <li ng-repeat = "x in names | orderBy:'country'">
+            {{x.name + ',' + x.country}}   <!--orderBy 过滤器根据表达式(字母的顺序)排列数组：-->
+        </li>
+        
+        <p><input type="text" ng-model="test"></p>
+        <ul>
+            <li ng-repeat = "x in names | filter:test | orderBy:country"><!--过滤输入-->
+                {{ (x.name | uppercase) + ',' + x.country}}
+            </li>
+        </ul>
+        
+    </div>
+    
+    <script>
+        angular.module("myApp",[]).controller("myCtrl",function($scope){
+            $scope.lastname = "wang";
+            $scope.firstname = "Jiaqian";
+            $scope.quantity = 5;
+            $scope.price = 2;
+            $scope.names = [
+        {name:'Jani',country:'aang'},
+        {name:'Hege',country:'li'},
+        {name:'Kai',country:'bang'}
+    ];
+        })
+    </script>
+</body>
+</html>
