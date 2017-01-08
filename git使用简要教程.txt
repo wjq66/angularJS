@@ -1,0 +1,20 @@
+一、如果你想新建一个远程仓库
+1、在合适的位置右键打开git bash
+2、创建一个版本库：（这里假设我的文件名是html）
+	mkdir html
+	cd html
+	pwd
+3、通过 git init 命令吧这个目录编程git可以管理的仓库
+4、这样git就把仓库建好了。
+5、把你的文件添加到仓库，只需要两步。
+	第一步、用git add 告诉git，把文件添加到仓库：git add index.html  多个文件可以直接使用：git add .
+	第二步、用命令git commit告诉git，-m后面的单引号中写上吧文件提交到仓库：git commit -m 'xxx'
+6、版本库与远程仓库连接
+	现在的情景是，你已经在本地创建了一个Git仓库后，又想在GitHub创建一个Git仓库，并且让这两个仓库进行远程同步，这样，GitHub上的仓库既可以作为备份，又可以让其他人通过该仓库来协作，真是一举多得。
+7、首先，登陆GitHub，创建一个新的仓库
+8、在本地的仓库下运行命令：
+git remote add origin git@github.com:michaelliao/learngit.git
+9、把本地库的内容推送到远程，用git push命令，实际上是把当前分支master推送到远程。：git push -u origin master
+二、如果你已经有一个远程的仓库
+1、吧你的远程仓库克隆到本地：git clone git@github.com:michaelliao/gitskills.git
+2、参照第一步。
