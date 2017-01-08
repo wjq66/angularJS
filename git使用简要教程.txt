@@ -17,4 +17,6 @@ git remote add origin git@github.com:michaelliao/learngit.git
 9、把本地库的内容推送到远程，用git push命令，实际上是把当前分支master推送到远程。：git push -u origin master
 二、如果你已经有一个远程的仓库
 1、吧你的远程仓库克隆到本地：git clone git@github.com:michaelliao/gitskills.git
-2、参照第一步。
+2、git add .
+3、git commit -m '1'
+4、git push -u origin master
