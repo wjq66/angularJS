@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>s
+<!--  使用对象作为数据源, x 为键(key), y 为值(value):-->
+   <div ng-app="myApp" ng-controller="myCtrl">
+       <p>选择：</p>
+        <select ng-model="select" ng-options="x for (x,y) in sites"></select>
+        <p>你选择的是:{{select}}</p>
+        
+   </div>
+    
+    
+    <script>
+        var app = angular.module("myApp",[]);
+        app.controller("myCtrl",function($scope){
+            $scope.sites = {
+    site01 : "Google",
+    site02 : "Runoob",
+    site03 : "Taobao"
+};
+        })
+    </script>
+</body>
+</html>

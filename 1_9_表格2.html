@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    <style>
+        table,
+        td {
+            border: 1px solid grey;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+   <!--使用odd或者even对表格添加样式。-->
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <table>
+            <tr ng-repeat="x in names | orderBy:'Name'">
+                <td ng-if="$odd" style="background-color:#f1f1f1">
+                    {{ x.Name }}</td>
+                <td ng-if="$even">
+                    {{ x.Name }}</td>
+                <td ng-if="$odd" style="background-color:#f1f1f1">
+                    {{ x.Country }}</td>
+                <td ng-if="$even">
+                    {{ x.Country }}</td>
+                <td ng-if="$odd" style="background-color:#f1f1f1">
+                    {{ x.Url }}</td>
+                <td ng-if="$even">
+                    {{ x.Url }}</td>
+        </table>
+    </div>
+
+    <script>
+        var app = angular.module("myApp", []);
+        app.controller("myCtrl", function ($scope, $http) {
+            $http.get("1_9_表格.json").success(function (response) {
+                $scope.names = response.records
+            });
+        });
+    </script>
+</body>
+
+</html>

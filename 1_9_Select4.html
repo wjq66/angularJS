@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <p>选择网址:</p>
+        <select ng-model="selecte" ng-options="x.site for x in sites"></select>
+        <p>选择的是:{{selecte.site}}</p>
+        <p>网址是:{{selecte.url}}</p>
+    </div>
+    
+    <script>
+        var app = angular.module("myApp",[]);
+        app.controller("myCtrl",function($scope){
+            $scope.sites=[{site : "Google",url:"http://www.google.com"},
+                         {site : "Runoob", url : "http://www.runoob.com"},
+	    {site : "Taobao", url : "http://www.taobao.com"}];
+        })
+    </script>
+</body>
+</html>

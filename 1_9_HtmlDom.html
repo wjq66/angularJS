@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+
+<body>
+
+    <div ng-app="" ng-init="flag=flase">
+        <p>
+            <button ng-disabled="flag">点我!</button>
+        </p>
+        <p>
+            <input type="checkbox" ng-model="flag" />按钮
+        </p>
+        <p>
+            {{ flag }}
+        </p>
+    </div>
+
+</body>
+
+</html>

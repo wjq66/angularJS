@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <select ng-model="select">
+            <option  ng-repeat="x in sites" value="{{x.url}}">{{x.site}}</option>
+        </select>
+        
+        <h1>你选择的是{{select}}</h1>
+    </div>
+    
+    <script>
+        var app=angular.module("myApp",[]);
+        app.controller("myCtrl",function($scope){
+            $scope.sites=[{site : "Google",url:"http://www.google.com"},
+                         {site : "Runoob", url : "http://www.runoob.com"},
+	    {site : "Taobao", url : "http://www.taobao.com"}];
+        })
+    </script>
+</body>
+</html>
