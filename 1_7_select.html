@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+   <!--两种方法，第一种使用ng-repeat，ng-repeat 有局限性，选择的值是一个字符串:第二种：使用 ng-options 指令，选择的值是一个对象：-->
+    <!--<div ng-app = "myApp" ng-controller="myCtrl">
+        <select name="" id="">
+            <option ng-repeat="x in names">{{x}}</option>
+        </select>
+    </div>
+    
+    <script>
+        var app = angular.module("myApp",[]);
+        app.controller("myCtrl",function($scope){
+            $scope.names=["wjq","wjq2","wjq3"];
+        })
+    </script>-->
+    
+    
+    
+    <div ng-app="myApp" ng-controller="myCtrl">
+       <select ng-model="selectSite" ng-options="x.site for x in sites"></select>
+        <h1>你选择的是:{{selectSite.site}}</h1>
+        <p>网址是:{{selectSite.url}}</p>
+        
+    </div>
+    
+    
+    <script>
+        var app = angular.module('myApp',[]);
+        app.controller('myCtrl',function($scope){
+            $scope.sites = [
+                {site:"google",url:"http:google.com"},
+                {site:"baidu",url:"http:baidu.com"},
+                {site:"Taobao",url:"http:Taobao.com"}
+            ];
+        });
+    </script>
+</body>
+</html>

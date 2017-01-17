@@ -6,21 +6,20 @@
     <script src="https://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
 </head>
 <body>
-    <div ng-app = "myApp" ng-controller="siteCtrl">
-        <ul>
-            <li ng-repeat ="x in names">
-                {{x.Name + ',' + x.Country}}
-            </li>
-        </ul>
-    </div>
-    
-    <script>
-        var app = angular.module("myApp",[]);
-        app.controller("siteCtrl",function($scope,$http){
-            $http.get("1_6_$http.json").success(function(response){
-                $scope.names = response.sites;
-            });
-        })
-    </script>
+<!--$http.get() 从web服务器上读取静态 JSON 数据。 -->
+<div ng-app="myApp" ng-controller="siteCtrl">
+    <ul>
+        <li ng-repeat="x in names">{{x.Name + ','+ x.Country}}</li>
+    </ul>
+</div>
+
+<script>
+    var app = angular.module("myApp", []);
+    app.controller("siteCtrl", function ($scope, $http) {
+        $http.get("1_6_$http.json").success(function (response) {
+            $scope.names = response.sites;
+        });
+    });
+</script>
 </body>
 </html>
