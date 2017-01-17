@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+   <!--ng-show和ng-hide用法一致-->
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <button ng-click="toggle()">隐藏/显示</button>
+        <div ng-hide="myVar">
+            ming:<input type=text ng-model="firstName"><br>
+        xing:<input type="text" ng-model="lastName"><br>
+        姓名:{{firstName+" "+lastName}}
+        </div>
+    </div>
+    
+    <script>
+        var app=angular.module("myApp",[]);
+        app.controller("myCtrl",function($scope){
+            $scope.firstName = "wang";
+            $scope.lastName = "jiaqian";
+            $scope.myVar = false;
+            $scope.toggle = function(){
+                $scope.myVar = !$scope.myVar;
+            }
+        })
+    </script>
+</body>
+</html>
