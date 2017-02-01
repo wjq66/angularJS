@@ -20,3 +20,4 @@ git remote add origin git@github.com:michaelliao/learngit.git
 2、git add .
 3、git commit -m '1'
 4、git push -u origin master
+三、若有多台电脑同时连接一个远程库，则每次上传前先与远程仓库进行同步，git pull，然后在上传

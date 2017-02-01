@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+   <!--以下列出了一些通用的 API 函数：
+API 	                描述
+angular.lowercase() 	转换字符串为小写
+angular.uppercase() 	转换字符串为大写
+angular.isString() 	判断给定的对象是否为字符串，如果是返回 true。
+angular.isNumber() 	判断给定的对象是否为数字，如果是返回 true。-->
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <p>原来的字符串:{{x1}}</p>
+        <p>转换为小写{{x2}}</p>
+        <p>转换为大写:{{x22}}</p>
+        <p>是一个字符串吗？{{x3}}</p>
+        <p>是一个数字吗？{{x4}}</p>
+    </div>
+    
+    <script>
+        var app=angular.module("myApp",[]);
+        app.controller("myCtrl",function($scope){
+            $scope.x1 = "WanGJiAqIaN";
+            $scope.x2 = angular.lowercase($scope.x1);
+            $scope.x22 = angular.uppercase($scope.x1);
+            $scope.x3 = angular.isString($scope.x1);
+            $scope.x4 = angular.isNumber($scope.x1);
+        })
+    </script>
+</body>
+</html>
