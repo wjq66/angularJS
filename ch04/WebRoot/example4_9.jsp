@@ -26,7 +26,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     	String webDir = request.getContextPath();
     	webDir = webDir.substring(1);
      %>
-     <jsp:setProperty name="play" property = "webDir" value="<%= webDir %>">
+     <jsp:setProperty name="play" property = "webDir" value="<%= webDir %>" />
      <jsp:setProperty name="play" property="imageNumber" param="imageNumber" />
   <body>
     <img src="images/<jsp:getProperty name="play" property="playImage" />" width="500" height="340">
